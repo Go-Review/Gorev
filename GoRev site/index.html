@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f6f2">
+    <meta name="description" content="A thoughtful, searchable guide to places worth visiting again.">
+    <title>GoRev — places worth revisiting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#places">Skip to places</a>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="GoRev home"><span class="wordmark-mark" aria-hidden="true">g</span>GoRev</a>
+      <p class="header-note">A field guide to places worth your time</p>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a class="header-link" href="#places">Browse places</a>
+        <a class="header-link header-review-link" href="#write-review">Leave a review <span aria-hidden="true">&darr;</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> GOOD PLACES, HONEST NOTES</p>
+          <h1 id="page-title">Go somewhere<br><em>good.</em></h1>
+          <p class="intro-description">A considered collection of places to eat, wander, and come back to. Every rating comes with a reason.</p>
+          <a class="primary-link" href="#write-review">Rate your visit <span aria-hidden="true">&rarr;</span></a>
+          <p class="intro-caption"><span class="caption-rule"></span> SAMPLE REVIEWS. CUSTOMIZE BEFORE SHARING.</p>
+        </div>
+        <figure class="intro-photo">
+          <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1400&q=85" alt="Sunlit neighborhood cafe with a long wooden counter" fetchpriority="high">
+          <figcaption><span>THE GO-TO LIST</span><span>UPDATED AS WE GO</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="review-section" id="write-review" aria-labelledby="review-title">
+        <div class="review-layout">
+          <div class="review-intro">
+            <p class="eyebrow review-eyebrow"><span class="eyebrow-dot"></span> YOUR TURN</p>
+            <h2 id="review-title">How was your visit?</h2>
+            <p>Leave a star rating and a few honest words. Reviews are checked before they are added to the guide.</p>
+          </div>
+          <form class="review-form" id="review-form">
+            <label class="form-field" for="review-place">
+              <span>PLACE</span>
+              <select id="review-place" name="place" required></select>
+            </label>
+            <fieldset class="rating-field">
+              <legend>YOUR RATING <span>REQUIRED</span></legend>
+              <div class="rating-choices">
+                <label class="rating-choice"><input type="radio" name="rating" value="1" aria-label="1 star" required><span aria-hidden="true">★</span></label>
+                <label class="rating-choice"><input type="radio" name="rating" value="2" aria-label="2 stars" required><span aria-hidden="true">★</span></label>
+                <label class="rating-choice"><input type="radio" name="rating" value="3" aria-label="3 stars" required><span aria-hidden="true">★</span></label>
+                <label class="rating-choice"><input type="radio" name="rating" value="4" aria-label="4 stars" required><span aria-hidden="true">★</span></label>
+                <label class="rating-choice"><input type="radio" name="rating" value="5" aria-label="5 stars" required><span aria-hidden="true">★</span></label>
+              </div>
+            </fieldset>
+            <label class="form-field" for="review-text">
+              <span>YOUR REVIEW</span>
+              <textarea id="review-text" name="review" rows="4" minlength="8" maxlength="1600" placeholder="What should the next person know?" required></textarea>
+            </label>
+            <div class="form-secondary-fields">
+              <label class="form-field" for="review-name">
+                <span>NAME <small>OPTIONAL</small></span>
+                <input id="review-name" name="displayName" type="text" maxlength="80" autocomplete="name" placeholder="Leave blank to stay anonymous">
+              </label>
+              <label class="form-field" for="review-date">
+                <span>WHEN DID YOU VISIT? <small>OPTIONAL</small></span>
+                <input id="review-date" name="visitDate" type="date">
+              </label>
+            </div>
+            <div class="form-trap" aria-hidden="true">
+              <label for="review-website">Leave this field empty</label>
+              <input id="review-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-submit-row">
+              <button class="review-submit" id="review-submit" type="submit">Send your review <span aria-hidden="true">&rarr;</span></button>
+              <p class="review-status" id="review-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+        <iframe class="submission-frame" id="review-submit-frame" name="review-submit-frame" title="Review submission status" hidden></iframe>
+      </section>
+
+      <section class="guide" id="places" aria-labelledby="guide-title">
+        <div class="guide-heading">
+          <div>
+            <p class="eyebrow section-eyebrow">THE SHORTLIST <span class="eyebrow-line"></span> <span id="guide-count">0 PLACES</span></p>
+            <h2 id="guide-title">Worth a visit.</h2>
+          </div>
+          <p class="guide-aside">Good meals, favorite corners, and the little details that make a place stick.</p>
+        </div>
+
+        <div class="toolbar" aria-label="Find a place">
+          <label class="search-box">
+            <span class="sr-only">Search places</span>
+            <span class="search-symbol" aria-hidden="true"></span>
+            <input id="search-input" type="search" placeholder="Search places, neighborhoods..." autocomplete="off">
+          </label>
+          <label class="sort-control">
+            <span class="sort-label">SORT</span>
+            <select id="sort-select" aria-label="Sort places">
+              <option value="recommended">Recommended</option>
+              <option value="rating">Top rated</option>
+              <option value="recent">Recently visited</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="filter-row" id="category-filters" aria-label="Filter by category"></div>
+        <p class="result-status" id="result-status" aria-live="polite"></p>
+        <div class="place-grid" id="place-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span class="empty-mark" aria-hidden="true">?</span>
+          <h3>No places found</h3>
+          <p>Try a different search or category.</p>
+          <button class="text-button" id="reset-filters" type="button">Clear filters <span aria-hidden="true">&rarr;</span></button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">g</span>GoRev</a>
+      <p>Good places are better when shared.</p>
+      <a class="back-top" href="#top">BACK TO TOP <span aria-hidden="true">&uarr;</span></a>
+    </footer>
+
+    <dialog class="place-dialog" id="place-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Close place details">Close <span aria-hidden="true">&times;</span></button>
+      <div id="dialog-content"></div>
+    </dialog>
+  </body>
+</html>
