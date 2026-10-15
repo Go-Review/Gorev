@@ -119,8 +119,9 @@ h2 { margin: 13px 0 0; font-family: var(--serif); font-size: 48px; font-weight: 
 .result-status { min-height: 15px; margin: 4px 0 13px; color: var(--muted); font-size: 10px; }
 .place-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 22px; }
 .review-card { min-width: 0; animation: rise-in 420ms ease both; }
-.card-image { position: relative; aspect-ratio: 1.48; overflow: hidden; background: #e5e9e2; }
+.card-image { position: relative; display: block; width: 100%; padding: 0; border: 0; aspect-ratio: 1.48; overflow: hidden; background: #e5e9e2; cursor: pointer; }
 .card-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 350ms ease; }
+.card-image:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
 .review-card:hover .card-image img { transform: scale(1.035); }
 .card-tag { position: absolute; top: 12px; left: 12px; padding: 7px 9px; background: var(--paper); color: var(--ink); font-size: 9px; font-weight: 700; }
 .card-body { padding: 15px 1px 0; }
@@ -129,9 +130,13 @@ h2 { margin: 13px 0 0; font-family: var(--serif); font-size: 48px; font-weight: 
 .rating { display: inline-flex; align-items: center; gap: 5px; flex: 0 0 auto; color: var(--ink); font-size: 12px; font-weight: 700; }
 .rating-star { color: #c16a39; font-size: 13px; }
 .card-body h3 { overflow: hidden; margin: 8px 0 7px; font-family: var(--serif); font-size: 25px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.place-name-link { color: inherit; text-decoration: none; }
+.place-name-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.place-name-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .card-summary { min-height: 39px; margin: 0 0 13px; color: #58615b; font-size: 11px; line-height: 1.7; }
 .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 11px; border-top: 1px solid var(--line); }
-.price-label { color: var(--muted); font-size: 10px; }
+.price-level { display: inline-flex; align-items: center; gap: 5px; color: var(--ink); font-size: 11px; font-weight: 700; }
+.price-level-icon { display: block; width: 31px; height: 31px; object-fit: contain; }
 .text-button { padding: 4px 0; border: 0; background: transparent; color: var(--blue); font-size: 10px; font-weight: 700; cursor: pointer; }
 .text-button span { margin-left: 7px; }
 .empty-state { padding: 65px 16px 24px; text-align: center; }
@@ -151,6 +156,14 @@ h2 { margin: 13px 0 0; font-family: var(--serif); font-size: 48px; font-weight: 
 .dialog-close { position: sticky; z-index: 2; top: 12px; float: right; display: inline-flex; align-items: center; gap: 10px; min-height: 35px; margin: 12px 12px -47px 0; padding: 0 11px; border: 0; background: var(--white); font-size: 10px; font-weight: 700; cursor: pointer; }
 .dialog-close span { font-size: 20px; font-weight: 400; }
 .dialog-photo { display: block; width: 100%; height: 265px; object-fit: cover; }
+.dialog-gallery-controls { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 9px 14px; border-bottom: 1px solid var(--line); }
+.gallery-arrow { width: 34px; height: 32px; border: 1px solid var(--line); background: var(--white); color: var(--ink); font-size: 17px; cursor: pointer; }
+.gallery-arrow:focus-visible, .gallery-thumbnail:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.gallery-count { min-width: 42px; color: var(--muted); font-size: 11px; text-align: center; }
+.dialog-gallery-thumbnails { display: flex; gap: 8px; overflow-x: auto; padding: 10px 14px; }
+.gallery-thumbnail { width: 62px; height: 48px; flex: 0 0 auto; padding: 0; overflow: hidden; border: 2px solid transparent; background: var(--line); cursor: pointer; }
+.gallery-thumbnail[aria-pressed="true"] { border-color: var(--blue); }
+.gallery-thumbnail img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .dialog-copy { padding: 28px 34px 35px; }
 .dialog-kicker { margin-bottom: 9px; color: var(--blue); font-size: 10px; font-weight: 700; }
 .dialog-title-row { display: flex; align-items: start; justify-content: space-between; gap: 18px; }
