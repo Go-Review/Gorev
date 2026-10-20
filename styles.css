@@ -40,7 +40,7 @@ button { color: inherit; }
 .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0; color: var(--blue); font-size: 10px; font-weight: 700; letter-spacing: 0; }
 .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
 h1, h2, h3, p, figure { margin-top: 0; }
-h1 { max-width: 590px; margin: 25px 0 16px; font-family: var(--serif); font-size: 60px; font-weight: 400; line-height: 0.98; letter-spacing: 0; }
+h1 { max-width: 590px; margin: 25px 0 16px; font-family: var(--serif); font-size: 50px; font-weight: 400; line-height: 0.98; letter-spacing: 0; }
 h1 em { color: var(--blue); font-weight: 500; }
 .intro-description { max-width: 380px; margin-bottom: 24px; color: #525b55; font-size: 15px; line-height: 1.75; }
 .primary-link { display: inline-flex; align-items: center; gap: 18px; min-height: 46px; padding: 0 17px; border-radius: 3px; color: var(--white); background: var(--blue); font-size: 12px; font-weight: 700; text-decoration: none; transition: background 160ms ease, transform 160ms ease; }
