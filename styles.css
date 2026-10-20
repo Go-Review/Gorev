@@ -194,7 +194,7 @@ h2 { margin: 13px 0 0; font-family: var(--serif); font-size: 48px; font-weight: 
   .header-nav { gap: 13px; }
   .header-link { font-size: 10px; }
   .intro { grid-template-columns: 1fr; gap: 30px; padding: 49px 6% 45px; }
-  h1 { margin-top: 21px; font-size: 65px; }
+  h1 { margin-top: 21px; font-size: 40px; }
   .intro-description { max-width: 340px; font-size: 14px; }
   .intro-caption { margin-top: 23px; }
   .intro-photo { height: auto; aspect-ratio: 1.34; }
