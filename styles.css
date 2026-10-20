@@ -188,7 +188,7 @@ h2 { margin: 13px 0 0; font-family: var(--serif); font-size: 48px; font-weight: 
   .header-nav { gap: 13px; }
   .header-link { font-size: 10px; }
   .intro { grid-template-columns: 1fr; gap: 10px; padding: 49px 6% 45px; }
-  h1 { margin-top: 10px; font-size: 60px; }
+  h1 { margin-top: 10px; font-size: 70px; }
   .intro-description { max-width: 340px; font-size: 14px; }
   .intro-caption { margin-top: 25px; }
   .guide { padding: 51px 6% 65px; }
